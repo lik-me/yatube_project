@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
 from .models import Post, Group
+
 
 def index(request):
     template = 'posts/index.html'
@@ -11,6 +11,7 @@ def index(request):
     }
     return render(request, template, context)
 
+
 def group_list(request):
     template = 'posts/group_list.html'
     context = {
@@ -18,7 +19,7 @@ def group_list(request):
     }
     return render(request, template, context)
 
-# View-функция для страницы сообщества:
+
 def group_posts(request, slug):
     # Функция get_object_or_404 получает по заданным критериям объект
     # из базы данных или возвращает сообщение об ошибке, если объект не найден.

@@ -14,13 +14,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from . import views
+
 
 urlpatterns = [
     path('', include('posts.urls', namespace='posts')),
     path('index.html', include('posts.urls', namespace='posts')),
     path('group_list.html', include('posts.urls', namespace='posts')),
-    #path('group/<slug:slug>/', views.group_posts),
     path('group/<slug:slug>/', include('posts.urls', namespace='posts')),
     path('admin/', admin.site.urls),
 ]
