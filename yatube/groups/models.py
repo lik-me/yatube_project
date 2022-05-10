@@ -1,7 +1,7 @@
 from django.db import models
 
 class Group(models.Model):
-    title = models.TextField()
+    title = models.CharField(max_length=200)
     slug = models.CharField(max_length=100)
     description = models.TextField()
 
