@@ -15,11 +15,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+app_name = 'posts'
 
 urlpatterns = [
     path('', include('posts.urls', namespace='posts')),
-    path('index.html', include('posts.urls', namespace='posts')),
     path('group_list.html', include('posts.urls', namespace='posts')),
-    path('group/<slug:slug>/', include('posts.urls', namespace='posts')),
+    path('group/<slug:slug>/', include('posts.urls', namespace='group_posts')),
     path('admin/', admin.site.urls),
+    path('auth/', include('users.urls')),
+    path('auth/', include('django.contrib.auth.urls')),
+    path('about/', include('about.urls', namespace='about')),
 ]
