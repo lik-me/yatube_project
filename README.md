@@ -17,5 +17,3 @@ Django 2.2.19
  ``` 
  python3 manage.py runserver 
  ``` 
- ### Авторы 
- Леонид
